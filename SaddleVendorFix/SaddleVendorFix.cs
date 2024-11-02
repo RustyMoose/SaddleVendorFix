@@ -56,6 +56,7 @@ public static class SaddleVendorFix
 			invisibleVendingMachine.InstallFromVendingOrders();
 			invisibleVendingMachine.SendNetworkUpdateImmediate();
 			
+			// Special thanks to lencorp on Discord for helping get this part working again after a Rust update. 
 			invisibleVendingMachine.SetAttachedNPC(shopKeeper);
 			shopKeeper.invisibleVendingMachineRef.Set(invisibleVendingMachine);
 			

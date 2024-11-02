@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>RustMaps</RootNamespace>
+        <AssemblyName>SaddleVendorFix</AssemblyName>
+        <ProjectGuid>{A48B3A6B-E7D3-4633-B5BF-9DF4202EB6A3}</ProjectGuid>
+
+        <TargetFramework>net48</TargetFramework>
+        <OutputType>Library</OutputType>
+        <Configurations>Debug;Release</Configurations>
+        <LangVersion>10</LangVersion>
+        <Nullable>enable</Nullable>
+
+        <AssemblySearchPaths>..\dependencies\rust;$(AssemblySearchPaths)</AssemblySearchPaths>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Optimize>true</Optimize>
+        <DebugType>embedded</DebugType>
+        <ErrorReport>prompt</ErrorReport>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>TRACE;DEBUG</DefineConstants>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Optimize>true</Optimize>
+        <DebugType>embedded</DebugType>
+        <ErrorReport>prompt</ErrorReport>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony" />
+        <Reference Include="Assembly-CSharp" />
+        <Reference Include="Facepunch.Network" />
+        <Reference Include="Facepunch.UnityEngine" />
+        <Reference Include="Rust.Data" />
+        <Reference Include="Rust.Global" />
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine.CoreModule" />
+    </ItemGroup>
+</Project>

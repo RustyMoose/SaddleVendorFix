@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using HarmonyLib;
 using UnityEngine;
 
@@ -14,7 +15,14 @@ public static class SaddleVendorFix
 	[HarmonyPrefix]
 	private static void Prefix()
 	{
-		FixSaddleVendors();
+		try
+		{
+			FixSaddleVendors();
+		}
+		catch (Exception e)
+		{
+			Debug.LogError("[SaddleVendorFix] Failed to fix saddle vendors: " + e.Message);
+		}
 	}
 
 	private static void FixSaddleVendors()

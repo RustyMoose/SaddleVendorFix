@@ -48,8 +48,8 @@ public static class SaddleVendorFix
 			invisibleVendingMachine.Spawn();
 			invisibleVendingMachine.EnableSaving(false);
 			
-			invisibleVendingMachine.SetFlag(VendingMachine.VendingMachineFlags.EmptyInv, true);
-			invisibleVendingMachine.SetFlag(VendingMachine.VendingMachineFlags.Broadcasting, true);
+			invisibleVendingMachine.SetFlagLocal(VendingMachine.VendingMachineFlags.EmptyInv, true);
+			invisibleVendingMachine.SetFlagLocal(VendingMachine.VendingMachineFlags.Broadcasting, true);
 			invisibleVendingMachine.UpdateMapMarker();
 			
 			invisibleVendingMachine.vendingOrders = invisibleVendingMachine.vmoManifest.GetFromIndex(18);
